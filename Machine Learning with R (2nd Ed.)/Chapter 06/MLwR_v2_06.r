@@ -4,7 +4,7 @@
 
 ## Understanding regression ----
 ## Example: Space Shuttle Launch Data ----
-launch <- read.csv("challenger.csv")
+launch <- read.csv(dir(".", "challenger.csv", recursive = T))
 
 # estimate beta manually
 b <- cov(launch$temperature, launch$distress_ct) / var(launch$temperature)
@@ -52,7 +52,7 @@ model
 
 ## Example: Predicting Medical Expenses ----
 ## Step 2: Exploring and preparing the data ----
-insurance <- read.csv("insurance.csv", stringsAsFactors = TRUE)
+insurance <- read.csv(dir(".", "insurance.csv", recursive = T), stringsAsFactors = TRUE)
 str(insurance)
 
 # summarize the charges variable
